@@ -40,6 +40,7 @@ struct TextureDeleter {
 		SDL_DestroyTexture(sdl_texture);
 	}
 };
+
 class EndlessMazeGame {
 	public:
 		EndlessMazeGame();
@@ -47,10 +48,17 @@ class EndlessMazeGame {
 		bool init();
 		bool loadMedia();
 		bool close();
+		static std::unique_ptr<SDL_Renderer, RendererDeleter> _screenRenderer_;
 	private:
 		std::unique_ptr<SDL_Window, WindowDeleter> _window_;
 		std::unique_ptr<SDL_Surface, SurfaceDeleter> _screenSurface_;
-		std::unique_ptr<SDL_Renderer, RendererDeleter> _screenRenderer_;
 
 };
 
+class BasicTexture {
+	public:
+		BasicTexture();
+		bool loadFromFile(std::string path);
+	private:
+		std::unique_ptr<SDL_Texture, TextureDeleter> _texture_;
+};
