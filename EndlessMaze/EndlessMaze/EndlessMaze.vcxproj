@@ -74,8 +74,8 @@
     <LibraryPath>C:\CPPLibs\SDL2-2.0.9\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\CPPLibs\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\CPPLibs\SDL2-2.0.9\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\CPPLibs\SDL2_ttf-2.0.15\include;C:\CPPLibs\SDL2_mixer-2.0.4\include;C:\CPPLibs\SDL2_image-2.0.4\include;C:\CPPLibs\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\CPPLibs\SDL2_mixer-2.0.4\lib\x86;C:\CPPLibs\SDL2_ttf-2.0.15\lib\x86;C:\CPPLibs\SDL2_image-2.0.4\lib\x86;C:\CPPLibs\SDL2-2.0.9\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -109,7 +109,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasicTexture.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="EndlessMazeGame.cpp" />
   </ItemGroup>
