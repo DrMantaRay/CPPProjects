@@ -48,7 +48,7 @@ class EndlessMazeGame {
 		bool init();
 		bool loadMedia();
 		bool close();
-		static std::unique_ptr<SDL_Renderer, RendererDeleter> _screenRenderer_;
+		std::unique_ptr<SDL_Renderer, RendererDeleter> _screenRenderer_;
 	private:
 		std::unique_ptr<SDL_Window, WindowDeleter> _window_;
 		std::unique_ptr<SDL_Surface, SurfaceDeleter> _screenSurface_;
