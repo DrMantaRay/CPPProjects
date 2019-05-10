@@ -3,7 +3,7 @@
 #include <iostream>
 
 int main(int argc, char* args[]) {
-	EndlessMazeGame endlessMazeGame = EndlessMazeGame();
-	endlessMazeGame.run();
+	GameWindow gameWindow = GameWindow();
+	gameWindow.run();
 	return 0;
 }

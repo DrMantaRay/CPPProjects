@@ -5,11 +5,12 @@
 #include <memory>
 
 
-
-EndlessMazeGame::EndlessMazeGame(): _window_(nullptr),_screenSurface_(nullptr), _screenRenderer_(nullptr) {
+// default constructor
+GameWindow::GameWindow(): _window_(nullptr),_screenRenderer_(nullptr) {
 }
 
-bool EndlessMazeGame::init() {
+// intialize various SDL modules
+bool GameWindow::init() {
 
 	bool success = true;
 
@@ -49,15 +50,16 @@ bool EndlessMazeGame::init() {
 	return success;
 }
 
-bool EndlessMazeGame::run() {
+bool GameWindow::run() {
 	if (!init()) {
 		std::cerr << "Failed to initialize!" << std::endl;
 	}
 	else {
 
 	}
+	return true;
 }
 
-bool EndlessMazeGame::close() {
+void GameWindow::close() {
 	SDL_Quit();
 }

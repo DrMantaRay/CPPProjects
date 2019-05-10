@@ -5,9 +5,6 @@
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
-struct WindowDeleter;
-struct SurfaceDeleter;
-
 enum KeyPressSurfaces {
 	KEY_PRESS_SURFACE_DEFAULT,
 	KEY_PRESS_SURFACE_UP,
@@ -41,24 +38,29 @@ struct TextureDeleter {
 	}
 };
 
-class EndlessMazeGame {
+class GameWindow {
 	public:
-		EndlessMazeGame();
-		bool run();
+		// Default constructor
+		GameWindow();
+
+		// Creates window
 		bool init();
+
+		// Renders 
+		bool run();
 		bool loadMedia();
-		bool close();
-		std::unique_ptr<SDL_Renderer, RendererDeleter> _screenRenderer_;
+		void close();
 	private:
+		// GameWindow data
+		std::unique_ptr<SDL_Renderer, RendererDeleter> _screenRenderer_;
 		std::unique_ptr<SDL_Window, WindowDeleter> _window_;
-		std::unique_ptr<SDL_Surface, SurfaceDeleter> _screenSurface_;
 
 };
 
 class BasicTexture {
 	public:
 		BasicTexture();
-		bool loadFromFile(std::string path);
+		bool loadFromFile(const std::string &path, SDL_Renderer *renderer);
 	private:
 		std::unique_ptr<SDL_Texture, TextureDeleter> _texture_;
 };

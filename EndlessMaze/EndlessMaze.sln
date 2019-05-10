@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EndlessMaze", "EndlessMaze\EndlessMaze.vcxproj", "{0FFABBE5-6520-458D-891D-540E4749A71F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EndlessMazeTest", "EndlessMazeTest\EndlessMazeTest.vcxproj", "{B98500AF-D689-49D7-9B55-4E91692D5D68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{0FFABBE5-6520-458D-891D-540E4749A71F}.Release|x64.Build.0 = Release|x64
 		{0FFABBE5-6520-458D-891D-540E4749A71F}.Release|x86.ActiveCfg = Release|Win32
 		{0FFABBE5-6520-458D-891D-540E4749A71F}.Release|x86.Build.0 = Release|Win32
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Debug|x64.ActiveCfg = Debug|x64
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Debug|x64.Build.0 = Debug|x64
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Debug|x86.ActiveCfg = Debug|Win32
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Debug|x86.Build.0 = Debug|Win32
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Release|x64.ActiveCfg = Release|x64
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Release|x64.Build.0 = Release|x64
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Release|x86.ActiveCfg = Release|Win32
+		{B98500AF-D689-49D7-9B55-4E91692D5D68}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
