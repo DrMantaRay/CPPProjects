@@ -33,16 +33,22 @@ class SectorGraph {
 		SectorGraph(int num_sectors, int max_sector_population, int max_edges, double max_immigration_pull);
 		SectorGraph() : SectorGraph(10, 100, 3, 0.2) {};
 		void generate_random_graph();
+		int get_num_sectors();
 		std::vector<std::unique_ptr<Sector>> sector_vector;
-		std::vector<std::set<int>> edge_vector;
+		std::vector<std::unique_ptr<Edge>> edge_vector;
 
 	private:
 		int max_sector_population_;
 		int num_sectors_;
+		int num_edges_;
 		int max_edges_;
 		double max_immigration_pull_;
-		
+};
 
+class Edge {
+	public:
+		Edge(Sector sec_a, Sector sec_b);
+	private:
 
 };
 

@@ -25,3 +25,7 @@ void SectorGraph::generate_random_graph() {
 			random_percentage_yearly(mt), random_immigration_pull(mt)));
 	}
 }
+
+int SectorGraph::get_num_sectors() {
+	return num_sectors_;
+}
