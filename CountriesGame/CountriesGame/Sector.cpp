@@ -19,6 +19,10 @@ double Sector::get_population() const {
 	return population_;
 }
 
+double Sector::modify_population(double population_change) {
+	population_ += population_change;
+}
+
 double Sector::get_population_growth_daily() const {
 	return population_growth_daily_;
 }

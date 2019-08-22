@@ -17,6 +17,7 @@ class Sector {
 		void set_population_growth_yearly(double yearly_interest);
 		int get_max_population() const;
 		double get_immigration_pull() const;
+		double modify_population(double population_change);
 
 	private:
 		std::string name;
@@ -48,8 +49,24 @@ class SectorGraph {
 class Edge {
 	public:
 		Edge(Sector sec_a, Sector sec_b);
-	private:
+	protected:
+		Sector sec_a;
+		Sector sec_b;
+};
 
+class SharedEdge : public Edge {
+	public:
+		double get_immigration_constant();
+	private:
+		double immigration_constant;
+};
+
+class SingleEdge : public Edge {
+	public:
+		double get_immigration_constant() const;
+		void update();
+	private:
+		double immigration_constant_;
 };
 
 std::ostream& operator<< (std::ostream &out, const Sector* sector);

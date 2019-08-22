@@ -1,19 +1,11 @@
 #include "Header.h" 
 #include <string>
 
-class Edge {
-	public:
-		Edge(Sector sec_a, Sector sec_b);
-	private:
-		std::string type;
-};
-
-class SharedEdge: public Edge {
-	private:
-	public:
-};
-
-class SingleEdge : public Edge {
-	private:
-	public:
-};
+Edge::Edge(Sector sec_a, Sector sec_b) {
+	sec_a = sec_a;
+	sec_b = sec_b;
+}
+double SingleEdge::get_immigration_constant() const { return immigration_constant_; }
+void SingleEdge::update() {
+	sec_a.modify_population(sec_a.get_immigration_pull() - sec_b.get_immigration_pull);
+}
